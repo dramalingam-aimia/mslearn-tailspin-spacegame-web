@@ -44,6 +44,10 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
 
+- template: templates/build.yml
+  parameters:
+    buildConfiguration: 'Debug'
+
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - $(buildConfiguration)'
   inputs:
